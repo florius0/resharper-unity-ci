@@ -3,7 +3,7 @@ author: "florius"
 description: "An action that runs the ReSharper inspectcode and dupfinder tools"
 branding:
   icon: "hash"
-  color: "purple"
+  color: "gray-dark"
 inputs:
   solution:
     description: "Path to your solution file, ex: MyProject.sln"

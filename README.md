@@ -1,6 +1,8 @@
 # Resharper-CI
 
-This action runs JetBrains Resharper InspectCode, prints human-readable output and writes it to `inspection.txt` as well as original output to `inspection.xml`
+This action runs JetBrains Resharper InspectCode with ReSharper Unity plugin installed, prints human-readable output and writes it to `inspection.txt` as well as original output to `inspection.xml`
+
+This action is version of <https://github.com/florius0/resharper-ci>
 
 ## Inputs
 

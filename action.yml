@@ -1,6 +1,6 @@
 name: "Resharper Unity CI"
 author: "florius"
-description: "An action that runs the ReSharper inspectcode and dupfinder tools"
+description: "An action that runs the ReSharper inspectcode with Unity suport"
 branding:
   icon: "hash"
   color: "gray-dark"

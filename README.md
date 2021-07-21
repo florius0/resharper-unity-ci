@@ -57,7 +57,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v2
      - name: Inspect
-       uses: florius0/inspectcode-action
+       uses: florius0/resharper-unity-ci
        with:
           solution: './MyProject.sln'
 ```

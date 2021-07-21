@@ -1,4 +1,4 @@
-name: "Resharper CI"
+name: "Resharper Unity CI"
 author: "florius"
 description: "An action that runs the ReSharper inspectcode and dupfinder tools"
 branding:

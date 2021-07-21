@@ -27,7 +27,7 @@ def build(settings):
 
 def inspectcode(settings):
     return run(
-        './resharper/inspectcode.sh',
+        'sh /resharper/inspectcode.sh',
         settings.solution,
         f'--include="{";".join(settings.include)}"' if settings.include else '',
         f'--exclude="{";".join(settings.exclude)}"' if settings.exclude else '',

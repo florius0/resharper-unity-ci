@@ -14,6 +14,6 @@ RUN curl -sf -o resharper-cli.zip -L "https://download.jetbrains.com/resharper/d
 RUN curl -sf -o JetBrains.Unity.nupkg -L "https://github.com/JetBrains/resharper-unity/releases/download/net211-rtm-2021.1.2/JetBrains.Unity.2021.1.2.127.nupkg" \
     && mv JetBrains.Unity.nupkg /resharper/JetBrains.Unity.nupkg
 
-COPY lib lib
+COPY lib /lib
 
 ENTRYPOINT ["./lib/main.py"]

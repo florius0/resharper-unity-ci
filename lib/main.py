@@ -26,7 +26,7 @@ def build(settings):
 
 
 def inspectcode(settings):
-    return run(
+    run(
         'sh /resharper/inspectcode.sh',
         settings.solution,
         f'--include="{";".join(settings.include)}"' if settings.include else '',
@@ -36,6 +36,7 @@ def inspectcode(settings):
         '-o="inspection.xml"',
         ' > /dev/null' if settings.hide else ''
     )
+    return 0
 
 
 def process_inspectcode_output(settings):
@@ -104,7 +105,7 @@ def process_inspectcode_output(settings):
 
 def settings_object_hook(d):
     def split_scsv(s):
-        return [v for v in re.split(r"\;+\s+", s) if v]
+        return [v for v in re.split(r"\;+\s*", s) if v]
 
     x = {}
     x['solution'] = d['solution']

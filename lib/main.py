@@ -33,7 +33,7 @@ def inspectcode(settings):
         f'--exclude="{";".join(settings.exclude)}"' if settings.exclude else '',
         f'--severity="{settings.severity}"' if settings.severity else '',
         f'--profile="{settings.profile}"' if settings.profile else '',
-        '-o="inspection.xml"',
+        '-o="./inspection.xml"',
         ' > /dev/null' if settings.hide else ''
     )
     return 0
@@ -88,7 +88,7 @@ def process_inspectcode_output(settings):
                 branch = tree.add(k)
                 walk_tree(t[k], branch)
 
-    issues = [issue_object_hook(i) for i in et.parse('inspection.xml').findall(
+    issues = [issue_object_hook(i) for i in et.parse('./inspection.xml').findall(
         './Issues/*/Issue') if i.get('TypeId') not in settings.discard_issues]
 
     def k(x): return x.File
@@ -98,7 +98,7 @@ def process_inspectcode_output(settings):
     walk_tree(tree(s, key=k), t)
 
     rich.print(t)
-    rich.print(t, file=open('inspection.txt', 'w'))
+    rich.print(t, file=open('./inspection.txt', 'w'))
 
     return len(issues)
 

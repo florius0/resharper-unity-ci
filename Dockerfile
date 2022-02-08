@@ -16,7 +16,4 @@ RUN curl -sf -o JetBrains.Unity.nupkg -L "https://github.com/JetBrains/resharper
 
 COPY lib /lib
 
-RUN ls
-RUN ls /lib
-
 ENTRYPOINT ["python3", "/lib/main.py"]
